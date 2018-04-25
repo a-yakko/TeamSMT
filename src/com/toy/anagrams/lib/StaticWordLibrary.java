@@ -30,6 +30,9 @@
 /* Anagram Game Application */
 
 package com.toy.anagrams.lib;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Implementation of the logic for the Anagram Game application.
@@ -82,55 +85,14 @@ final class StaticWordLibrary extends WordLibrary {
         "vertex",
         "unsigned",
         "traditional"};
-
-    private static final String[] SCRAMBLED_WORD_LIST = {
-        "batsartcoin",
-        "maibuguos",
-        "ratimhteci",
-        "abkclssha",
-        "ibmtpa",
-        "iccrmutsnaec",
-        "ocbmnitaoni",
-        "ocsnqeeutnyl",
-        "ocsnroitmu",
-        "edrcmeneitgn",
-        "edepdnneyc",
-        "idasbmgiauet",
-        "ydanicm",
-        "neacsplutaoni",
-        "qeiuaveltn",
-        "xerpseisno",
-        "aficilatet",
-        "rfgaemtn",
-        "ehaxedicalm",
-        "milpmeneatitno",
-        "niidtsniugsiahleb",
-        "niehiratcen",
-        "nietnret",
-        "ajav",
-        "olacilazitno",
-        "imrcpoorecssro",
-        "anivagitno",
-        "poitimazitno",
-        "aparemert",
-        "aprtcki",
-        "ipkcel",
-        "opylomprich",
-        "irogorsuyl",
-        "isumtlnaoesuyl",
-        "psceficitaoni",
-        "tsurtcreu",
-        "elixalc",
-        "ilekiwse",
-        "amanegemtn",
-        "aminupalet",
-        "amhtmetacsi",
-        "ohjtvaa",
-        "evtrxe",
-        "nuisngde",
-        "rtdatioialn"
-    };
     
+    private static String[] sort(String[] array) {
+    	List<Object> asList = Arrays.asList(array);
+		List<Object> list = asList; //String
+    	Collections.shuffle(list);
+    	String[] RANDOM_WORD_LIST =(String[])list.toArray(new String[list.size()]);
+    	return RANDOM_WORD_LIST;
+    }
     final static WordLibrary DEFAULT = new StaticWordLibrary();
 
     /**
@@ -154,7 +116,55 @@ final class StaticWordLibrary extends WordLibrary {
      * @return word at that index in its scrambled form
      */
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
+    	String[] SCRAMBLED_WORD_LIST = {
+    	        "batsartcoin",
+    	        "maibuguos",
+    	        "ratimhteci",
+    	        "abkclssha",
+    	        "ibmtpa",
+    	        "iccrmutsnaec",
+    	        "ocbmnitaoni",
+    	        "ocsnqeeutnyl",
+    	        "ocsnroitmu",
+    	        "edrcmeneitgn",
+    	        "edepdnneyc",
+    	        "idasbmgiauet",
+    	        "ydanicm",
+    	        "neacsplutaoni",
+    	        "qeiuaveltn",
+    	        "xerpseisno",
+    	        "aficilatet",
+    	        "rfgaemtn",
+    	        "ehaxedicalm",
+    	        "milpmeneatitno",
+    	        "niidtsniugsiahleb",
+    	        "niehiratcen",
+    	        "nietnret",
+    	        "ajav",
+    	        "olacilazitno",
+    	        "imrcpoorecssro",
+    	        "anivagitno",
+    	        "poitimazitno",
+    	        "aparemert",
+    	        "aprtcki",
+    	        "ipkcel",
+    	        "opylomprich",
+    	        "irogorsuyl",
+    	        "isumtlnaoesuyl",
+    	        "psceficitaoni",
+    	        "tsurtcreu",
+    	        "elixalc",
+    	        "ilekiwse",
+    	        "amanegemtn",
+    	        "aminupalet",
+    	        "amhtmetacsi",
+    	        "ohjtvaa",
+    	        "evtrxe",
+    	        "nuisngde",
+    	        "rtdatioialn"
+    	    };
+    	String[]RandomArray = sort(SCRAMBLED_WORD_LIST);
+        return RandomArray[idx];
     }
 
     /**
